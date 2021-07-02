@@ -1,4 +1,4 @@
-# Some new stuff 
+# Some new stuff  
 
 Ternary operator: ` day === "Monday" ? price -= 1.5 : price += 1.5; "
 
