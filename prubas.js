@@ -4,3 +4,8 @@ if( typeof n === 'number') {
 }else {
     console.log('No es un número ')
 }
+
+
+//yield  
+
+//
