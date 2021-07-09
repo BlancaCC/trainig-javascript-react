@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#message {
+  color:aqua;
+  text-align: center;
+  background-color: burlywood;
+  padding: 300px 300px 300px 300px;
+  height: 200px;
+  width: 200px;
+  font-family: ;
+}
+
+
