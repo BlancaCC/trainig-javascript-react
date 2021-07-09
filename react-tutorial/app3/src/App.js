@@ -69,7 +69,7 @@ function UserList (props){
  *  render + return  vs only  return 
  * this.props vs props
  */
-class App extends Component {
+class NotApp extends Component {
   constructor () {
     super ();
 
@@ -104,9 +104,24 @@ function tick( ) {
   );
 }
 
-tick();
-export default App; //this would overwrite the first tick ()
+class App2 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+  render () {
+    return (
+      <div>
+        <h1> Good and prosperous morning</h1>
+        <h2> It is { this.state.date.toLocaleTimeString()}</h2>
+      </div>
+    );
+  }
+}
 
-tick(); // this would override the App
-setInterval(tick, 1000)
+//export  default App; 
 
+ReactDOM.render(
+  <App2 />,
+  document.getElementById('root')
+);
