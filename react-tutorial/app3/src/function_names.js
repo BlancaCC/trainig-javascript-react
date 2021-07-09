@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { Component } from 'react';
+
 
 /*
 class User extends Component {
@@ -16,11 +16,12 @@ class User extends Component {
 */
 
 function User (props){
-  return (
-    <li>
-      {props.id} - {props.name}
-    </li>
-  );
+
+    return (
+      <li>
+        {props.id} - {props.name}
+      </li>
+    );
 }
 
 /*
@@ -83,30 +84,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <UserList users = {this.state.users} />
-      </div>
+      <UserList users = {this.state.users} />
     );
   }
 }
-
-
-function tick( ) {
-  const element = (
-    <div>
-      <h1> Good Morning !</h1>
-      <h2> It is {new Date().toLocaleTimeString() }</h2>
-    </div>
-  )
-  ReactDOM.render (
-    element,
-    document.getElementById('root')
-  );
-}
-
-tick();
-export default App; //this would overwrite the first tick ()
-
-tick(); // this would override the App
-setInterval(tick, 1000)
-
+export default App;
