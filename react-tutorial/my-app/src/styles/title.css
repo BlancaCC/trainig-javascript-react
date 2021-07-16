@@ -1,0 +1,39 @@
+.Title {
+    color: #3f015c;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 800;
+    border:5px  solid #3f015c;
+    box-shadow: #3f015c52;
+    top: 20px;
+    width: auto;/*80%;*/
+    margin-left: 14%;
+    padding: 14% 20px 20px 20px;
+    background-color: rgb(248, 240, 223);
+}
+
+.Objective {
+    color: #3f015c;
+    margin-top: 100px;
+}
+
+ul {
+    align-items: left;
+    width: 70%;
+    margin: auto;
+    top: 100px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 27px;
+    text-align: center;
+    color: rgb(195, 232, 233);
+
+    background-color: #3f015c;
+    padding: 60px 2px;
+    border-radius: 6px;
+
+}

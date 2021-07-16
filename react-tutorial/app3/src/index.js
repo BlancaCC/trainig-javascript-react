@@ -4,87 +4,88 @@ import './index.css';
 //import App from './App';
 
 
-function UserGreeting(props) {
-  return <h1> Welcome back!</h1>;
-}
-
-function GuestGreeting(props) {
-  return <h1> Please sign up.</h1>
-}
-
-function Greeting (props) {
-  const isLoggedIn = props.isLoggedIn;
-  if( isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
-}
-
-
-function LoginBotton(props){
-  return (
-    <button onClick={props.onClick}>
-      Login
-    </button>
-  );
-}
+let url = 'https://jsonplaceholder.typicode.com/posts/1/comments'
 
 
 
-function LogoutButton(props){
-  return (
-    <button onClick={props.onClick}>
-      Logout     
-    </button>
-  );
-}
+/*
+const response = await fetch(url, {credentials: 'omit'})
+  .then(response => response.json())
+  .then(data => { 
+      console.log(data);
+      response =  data;
+    });
 
+console.log('Response value is ' + response);
 
-class LoginControl extends Component {
-  constructor(props) {
-    super(props);
-  
-    this.handleLoginClick =
-      this.handleLoginClick.bind(this);
-    this.handleLogoutClick = 
-      this.handleLogoutClick.bind(this);
+*/
+const dataTable = [
+  {
+    "postId": 1,
+    "id": 1,
+    "name": "id labore ex et quam laborum",
+    "email": "Eliseo@gardner.biz",
+    "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  },
+  {
+    "postId": 1,
+    "id": 2,
+    "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+  }];
 
-    this.state = {isLoggedIn: false};
-  }
+console.log(dataTable);
 
-  handleLoginClick() {
-    this.setState({isLoggedIn:true});
-  }
+function Header (props) {
+    const columnNames = props.columnNames;
 
-  handleLogoutClick() {
-    this.setState({isLoggedIn:false});
-  }
-
-
-
-  render(){
-    const isLoggedIn = this.state.isLoggedIn;
-    let button; 
-
-    if(isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
-    } else {
-      button = <LoginBotton onClick = {this.handleLoginClick} />;
-    }
-
-
+    const head = columnNames.map( e => 
+                    <th> {e}</th>
+                );
     return (
-        // why we don't write this.isLoggedIn
-      <div id='message'>
-        <Greeting isLoggedIn = {isLoggedIn} />
-        {button}
-      </div>
+        <thead>
+            <tr> {head}</tr>
+        </thead>
     );
-  }
+}
+function OneRow(props) {
+    const row = props.row;
+    const rowRender = props.columnNames.map( colunm =>
+        <td> {row[colunm]}</td>);
+
+    return rowRender;
+}
+
+function Table ( props) {
+
+    const columnNames = props.columnNames;
+    const rowsRender = props.rows.map( r =>
+            <tr>
+                <OneRow 
+                    columnNames={columnNames}
+                    row={r}
+                />
+            </tr>
+        );
+    
+    return(
+        <div>
+            <h2> My table</h2>
+        <table>
+            <Header columnNames={columnNames} />
+            {rowsRender}
+    </table> 
+    </div>  
+    );
+
 }
 
 
 ReactDOM.render(
-  <LoginControl />,
-document.getElementById('root')
-)
+    <Table
+        rows={dataTable} 
+        columnNames={['name', 'email']} 
+    />,
+    document.getElementById('root')
+);
