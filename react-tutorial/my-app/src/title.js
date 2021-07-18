@@ -40,15 +40,18 @@ function Title () {
                 The aim of this lovely title was to use hooks instead of classes,
              become used to effects and states. It has been fun
              but reach somthing aesthetic with CSS is hard.
-</p>
+            </p>
+            <h3 className='CSS_is_awesome'> CSS is a awesome</h3>
     </>
     ); 
 }
 
+
 function TitleObjetive() {
     const objetives = [
         'Effective Hooks',
-        'State Hooks'
+        'State Hooks',
+        'CSS flex'
     ];
 
     const component = objetives.map(o =>
@@ -59,7 +62,6 @@ function TitleObjetive() {
         <>
         <h2> Applied concepts</h2>
         <ul className="Objective">{component}</ul>
-  
         </>
     );
 }

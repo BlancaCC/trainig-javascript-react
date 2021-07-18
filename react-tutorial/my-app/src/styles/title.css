@@ -6,8 +6,9 @@
     border:5px  solid #3f015c;
     box-shadow: #3f015c52;
     top: 20px;
-    width: auto;/*80%;*/
-    margin-left: 14%;
+    width: auto;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 14% 20px 20px 20px;
     background-color: rgb(248, 240, 223);
 }
@@ -35,5 +36,19 @@ h2 {
     background-color: #3f015c;
     padding: 60px 2px;
     border-radius: 6px;
+
+}
+
+.CSS_is_awesome {
+    color: black; 
+    padding: 15px;
+    border: solid;
+    width: 100px;
+    height: 100px;
+    padding-top: auto;
+    overflow: visible;
+    margin-left: 50%;
+    font-size: 30px;
+    background-color: rgb(248, 240, 223);
 
 }

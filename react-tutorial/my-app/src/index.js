@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css'
 
+import { ObjetivesFromList } from './util';
 import {Title, TitleObjetive} from './title.js';
-import {Table, dataTable, Objective} from './firstTable.js'
+import {Table, dataTable, Objective} from './firstTable.js';
+import {FetchContent, FetchObjetives} from './fetch.js';
 
 
 function Structure (props) {
     return(
-        <div className='SplitPane'>
+        <div className='SplitPaneRow'>
             <div className='SplitPane-left'>
                {props.left}
             </div>
-            <div className='SplitPane-right'>
+            <div className='SplitPaneCol-right'>
                {props.right}
             </div>
         </div>
@@ -24,7 +26,7 @@ function App() {
         <>
         <Structure
             right={<Title />}
-            left={<TitleObjetive />}
+            left={  <TitleObjetive />}
         />
         <Structure
             right={
@@ -33,6 +35,11 @@ function App() {
                 columnNames={['name', 'email']}  />
             }
             left = {<Objective/>}
+        />
+        <Structure
+            right={<FetchContent />}
+            left={ <ObjetivesFromList 
+                    objectives={FetchObjetives} />}
         />
         </>
     );
