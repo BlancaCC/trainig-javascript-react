@@ -31,7 +31,7 @@ html, body, #root {
 
   .Subtitle  {
     color: #3f015c; 
-    background:#f3caa3;
+    background: #f3caa3;
     margin-left: 12%;
 
     font-size: 30px;
@@ -50,5 +50,9 @@ p {
   margin-left: 10%;
   font-weight: 450;
   padding: 15px;
+}
+
+.section {
+  margin-left: 10%;
 }
   

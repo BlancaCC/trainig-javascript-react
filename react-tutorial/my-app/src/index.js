@@ -6,6 +6,8 @@ import { ObjetivesFromList } from './util';
 import {Title, TitleObjetive} from './title.js';
 import {Table, dataTable, Objective} from './firstTable.js';
 import {FetchContent, FetchObjetives} from './fetch.js';
+import { SearchBox, SearchBoxObjetives } from './search_box.js';
+import { Mimifiquidir , MimifiquidirObjetives} from './input.js';
 
 
 function Structure (props) {
@@ -40,6 +42,22 @@ function App() {
             right={<FetchContent />}
             left={ <ObjetivesFromList 
                     objectives={FetchObjetives} />}
+        />
+        <Structure
+            right={< Mimifiquidir />}
+            left = {
+                <ObjetivesFromList
+                    objectives= {MimifiquidirObjetives}
+                />
+            }
+        />
+        <Structure
+            right = {<SearchBox />}
+            left = {
+                <ObjetivesFromList
+                    objectives={SearchBoxObjetives}
+                />
+            }
         />
         </>
     );

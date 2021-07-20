@@ -1,0 +1,15 @@
+
+.wrapMimifiquidir{
+    display:flex;
+}
+.MimifiquidirInput {
+    width: 70%;
+    height: 100px;
+    font-size: 16px ;
+}
+.MimifiquidirOutput{
+    border: solid 1px #3f015c;
+    background: white;
+    font-style: italic;
+
+}
