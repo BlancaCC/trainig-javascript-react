@@ -5,22 +5,30 @@ import ListItem from './ListItem.js';
 import SearchInput from './SearchInput.js';
 import _ from 'lodash';
 
+
+// what the meaning of cb
+const fetchData = async (query, cb) => {
+  const res = await fetchSearchResults(query);
+  cb(res);
+};
+
+const debouncedFetchData = _.debounce(( query, cb) => {
+  fetchData(query, cb);
+},500 );
+
 export default function App() {
   const [query, setQuery] = React.useState('');
   const [results, setResults] = React.useState([]);
-
-
-  const fetchData = async () => {
-    const res = await fetchSearchResults(query);
-    setResults(res);
-  };
-
   
+
   React.useEffect(() => {
-    fetchData();
+    debouncedFetchData( query, res=> {
+      setResults(res);
+    });
   }, [query]);
   return (
     <div>
+      <h1>  At this page, we are not alcoholic,but this free API is stunning:</h1>
     <SearchInput
       value={query}
       onChangeText={e => {
