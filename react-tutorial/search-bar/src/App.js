@@ -28,7 +28,7 @@ export default function App() {
   }, [query]);
   return (
     <div>
-      <h1>  At this page, we are not alcoholic,but this free API is stunning:</h1>
+      <h1> We are a healthy web, though we do not reject beer APIs :</h1>
     <SearchInput
       value={query}
       onChangeText={e => {

@@ -14,4 +14,4 @@ export const fetchSearchResults = async query => {
         } else {
             return [];
     }
-};
+}
